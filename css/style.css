@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: "Open Sans", sans-serif;
+	background: url("https://c4.wallpaperflare.com/wallpaper/654/555/787/geometry-cyberspace-digital-art-lines-wallpaper-preview.jpg");
+	background-size: cover;
+	display: grid;
+	place-items: center;
+}
+
+.container {
+	width: 400px;
+	background: rgba(242, 242, 242, 0.7);
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 50px 20px;
+	animation: show-card 0.3s linear 1 forwards;
+}
+@keyframes show-card {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.title {
+	color: #29293d;
+	font-size: 230%;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.input-field {
+	width: 80%;
+	height: 30px;
+	border-bottom: 2px solid #595959;
+	margin: 0 auto;
+	position: relative;
+}
+.input-field.username {
+	margin-bottom: 40px;
+}
+.input-field input {
+	width: 100%;
+	height: 100%;
+	font-size: 17px;
+	color: #1a1a1a;
+	background: none;
+	border: none;
+	outline-width: 0;
+	padding: 0 30px;
+	position: relative;
+	z-index: 2;
+}
+.input-field i {
+	font-size: 18px;
+	color: #29293d;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+	transition: color 0.2s linear;
+}
+.fa-user,
+.fa-lock {
+	position: absolute;
+	left: 4px;
+}
+.input-field span::before {
+	content: attr(data-placeholder);
+	color: transparent;
+	font-size: 13px;
+	position: absolute;
+	top: 50%;
+	left: 30px;
+	transform: translateY(-50%);
+	z-index: 1;
+	transition: top 0.4s linear;
+	animation: show-text 0.7s linear 0.4s 1 forwards;
+}
+@keyframes show-text {
+	from {
+		color: transparent;
+	}
+	to {
+		color: #595959;
+	}
+}
+.input-field span::after {
+	content: "";
+	width: 0;
+	height: 2px;
+	background: linear-gradient(120deg, #29293d, #990033);
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	transition: width 0.4s linear;
+}
+.focus ~ i {
+	color: #990033;
+	transition: color 0.2s linear;
+}
+.focus ~ span::before {
+	top: -20px;
+	transform: translateY(0);
+	transition: top 0.4s linear;
+}
+.focus ~ span::after {
+	width: 100%;
+	transition: width 0.4s linear;
+}
+.fa-eye,
+.fa-eye-slash {
+	font-size: 8px;
+	position: absolute;
+	right: 4px;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+.fa-eye:hover,
+.fa-eye-slash:hover {
+	color: #990033;
+	transition: all 0.2s linear;
+}
+
+.pw-generate {
+	width: 70%;
+	padding: 5px 10px;
+	margin: 10px 0 0 40px;
+	line-height: 1.5;
+	font-size: 12px;
+	font-weight: 700;
+	color: #29293d;
+	background: rgba(242, 242, 242, 0.3);
+	border: none;
+	border-radius: 6px;
+	box-shadow: 0 0 3px #29293d;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+.pw-generate i {
+	margin-right: 5px;
+}
+.pw-generate:hover {
+	box-shadow: 0 0 6px #29293d;
+	transition: all 0.2s linear;
+}
+
+.login {
+	display: block;
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+	background: linear-gradient(120deg, #29293d, #990033);
+	background-size: 150%;
+	border: none;
+	border-radius: 6px;
+	padding: 15px 50px;
+	margin: 40px auto 0;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+.login:hover {
+	background-position: right;
+	box-shadow: 0 0 5px rgba(153, 0, 51, 0.7);
+	transition: all 0.2s linear;
+}
+
+.new-acc {
+	font-size: 13px;
+	text-align: center;
+	margin-top: 15px;
+}
+.sign-up {
+	font-weight: 700;
+	color: #990033;
+	cursor: pointer;
+}
+.sign-up:hover {
+	text-decoration: underline;
+}
