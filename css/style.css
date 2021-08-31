@@ -161,6 +161,7 @@ body {
 }
 
 .login {
+	width: 85%;
 	display: block;
 	font-size: 18px;
 	font-weight: 500;
